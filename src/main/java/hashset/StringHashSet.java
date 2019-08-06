@@ -20,17 +20,29 @@ public class StringHashSet implements Set<String> {
 
     @Override
     public int size() {
+        for (List<String> number : buckets) {
+            int retval = buckets.size();
+            System.out.println("Size of list = " + retval);
+        }
         return 0;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        for (List<String> bucket : this.buckets) {
+            if (!bucket.isEmpty()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
-    public boolean contains(Object o) {
-        return false;
+    public boolean contains(Object element) {
+        int hash = element.hashCode();
+        int index = Math.abs(hash % buckets.size());
+        List<String> bucket = buckets.get(index);
+        return bucket.contains(element);
     }
 
     @Override
@@ -51,9 +63,9 @@ public class StringHashSet implements Set<String> {
     @Override
     public boolean add(String potencialMember) {
         int hash = potencialMember.hashCode();
-        int index = hash % this.buckets.size();
+        int index = Math.abs(hash % this.buckets.size());
         List<String> bucket = this.buckets.get(index);
-        if(bucket.contains(potencialMember)) {
+        if (bucket.contains(potencialMember)) {
             return false;
         }
         bucket.add(potencialMember);
@@ -87,7 +99,9 @@ public class StringHashSet implements Set<String> {
 
     @Override
     public void clear() {
-
+        for (List<String> bucket : this.buckets) {
+            bucket.clear();
+        }
     }
 
     @Override

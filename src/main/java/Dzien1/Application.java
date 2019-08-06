@@ -26,6 +26,7 @@ public class Application {
         set.add("Alan");
         set.add("Jakub");
         set.add("Marek");
+        System.out.println(set);
     }
 
     private static void experimentWithArrayList(int size) {
@@ -36,6 +37,7 @@ public class Application {
         for (int i = size / 2; i < 1.5 * size; i++) {
             boolean contains = numbers.contains(i);
         }
+
     }
 
     private static void experimentWithHashSet(int size) {

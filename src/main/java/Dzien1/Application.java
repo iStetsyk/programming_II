@@ -4,6 +4,7 @@ import hashset.StringHashSet;
 
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
@@ -26,6 +27,10 @@ public class Application {
         set.add("Alan");
         set.add("Jakub");
         set.add("Marek");
+        set.add("Marek");
+
+        set.removeIf(s -> s.startsWith("A"));
+
         System.out.println(set);
     }
 

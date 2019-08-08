@@ -1,10 +1,7 @@
 package Dzien1;
 
-import hashset.StringHashSet;
-
 import java.util.List;
 import java.util.Set;
-import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
@@ -22,16 +19,17 @@ public class Application {
 //        experimentWithArrayList(1_000_000);
 //        end = System.currentTimeMillis();
 //        System.out.println(end-start);
-        Set<String> set = new StringHashSet();
-        set.add("Ala");
-        set.add("Alan");
-        set.add("Jakub");
-        set.add("Marek");
-        set.add("Marek");
+//        Set<String> set = new StringHashSet();
+//        set.add("Ala");
+//        set.add("Alan");
+//        set.add("Jakub");
+//        set.add("Marek");
+//        set.add("Marek");
+//
+//        set.removeIf(s -> s.startsWith("A"));
+//
+//        System.out.println(set);
 
-        set.removeIf(s -> s.startsWith("A"));
-
-        System.out.println(set);
     }
 
     private static void experimentWithArrayList(int size) {

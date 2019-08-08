@@ -1,4 +1,4 @@
-package hashset;
+package hashcollections;
 
 import org.junit.Test;
 
@@ -48,7 +48,6 @@ public class StringHashSetTest {
     @Test
     public void shouldFindNameInTheList() {
         Set<String> set = new StringHashSet();
-
 
     }
 }
